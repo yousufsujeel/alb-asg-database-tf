@@ -11,3 +11,7 @@ variable "env" {
      description = "Environment (e.g., dev, prod, staging)."
       type        = string
 }
+variable "common_tags" {
+      description = "Common tags"
+      type        =  map
+}

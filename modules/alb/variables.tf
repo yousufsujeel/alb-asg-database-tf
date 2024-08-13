@@ -32,3 +32,7 @@ variable "certificate_arn" {
   description = "ARN of the SSL/TLS certificate"
   type        = string
 }
+variable "common_tags" {
+      description = "Common tags"
+      type        =  map
+}

@@ -7,9 +7,9 @@ resource "aws_lb" "application_load_balancer" {
   subnets            = [var.public_subnet_az1_id,var.public_subnet_az2_id]
   enable_deletion_protection = false
 
-  tags   = {
-    Name = "${var.project_name}-${var.env}-alb"
-  }
+  tags      = merge(var.common_tags,
+              tomap({Name = format("%s-%s-%s",var.project_name, var.env, "alb")})
+              )
 }
 
 # create target group

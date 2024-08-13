@@ -27,9 +27,9 @@ resource "aws_security_group" "alb_security_group" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-  tags   = {
-    Name = "${var.project_name}-${var.env}-alb_security_group"
-  }
+ tags      = merge(var.common_tags,
+              tomap({Name = format("%s-%s-%s",var.project_name, var.env, "alb_security_group")})
+              )
 }
 
 # create security group for the ec2
@@ -61,7 +61,7 @@ resource "aws_security_group" "ec2_security_group" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-  tags   = {
-    Name = "${var.project_name}-${var.env}-ec2_security_group"
-  }
+ tags      = merge(var.common_tags,
+              tomap({Name = format("%s-%s-%s",var.project_name, var.env, "ec2_security_group")})
+              )
 }
