@@ -15,7 +15,8 @@ This repo builds modules to provision
 Route 53 with a Valid public Domain
 
 # Usage
-  ````cd ssc-prod
+  ````
+  cd ssc-prod
   terraform init
   terrafom plan
   terraform apply
