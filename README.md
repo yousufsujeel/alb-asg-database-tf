@@ -19,6 +19,6 @@ Route 53 with a Valid public Domain
   terraform init
   terrafom plan
   terraform apply
-   ```
+  ````
 # Architecture Diagram
 ![Architecture Diagram](diagram/Architect-Diagram-asg-database.jpg)
