@@ -14,9 +14,10 @@ resource "aws_vpc" "vpc" {
 resource "aws_internet_gateway" "internet_gateway" {
   vpc_id    =  aws_vpc.vpc.id
 
-  tags      = {
-    Name    = "${var.project_name}-igw"
-  }
+  tags      = merge(var.common_tags,
+              tomap({Name = format("%s-%s-%s",var.project_name, var.env, "igw")})
+              )
+
 }
 
 # use data source to get all avalablility zones in region
