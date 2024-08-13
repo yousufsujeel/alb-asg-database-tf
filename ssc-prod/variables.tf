@@ -98,3 +98,15 @@ variable "low_network_in_threshold" {
   description = "The threshold for low network inbound traffic, used for scaling policies."
   type        = number
 }
+variable "CostCenter" {
+  description = "Cost Center of Application"
+  type        = string
+  default     = "ssc_cost_center"
+}   
+
+variable "ApplicationID" {
+  description = "ApplicationID of Application"
+  type        = string
+  default     = "ssc_appid"
+}
+

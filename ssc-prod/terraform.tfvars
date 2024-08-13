@@ -18,3 +18,5 @@ max_size=5
 min_size=1
 high_network_in_threshold=750000000
 low_network_in_threshold=250000000
+CostCenter="ssc_cost_center"
+ApplicationID="ssc_aapid"

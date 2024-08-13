@@ -38,3 +38,7 @@ variable "private_data_subnet_az2_cidr" {
       description = "CIDR range for the private data subnet in availability zone 2."
       type        = string
 }
+variable "common_tags" {
+      description = "Common tags"
+      type        =  map
+}

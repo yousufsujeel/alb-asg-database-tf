@@ -4,9 +4,10 @@ resource "aws_vpc" "vpc" {
   instance_tenancy        = "default"
   enable_dns_hostnames    = true
 
-  tags      = {
-    Name    = "${var.project_name}-${var.env}-vpc"
-  }
+  tags      = merge(var.common_tags,
+              tomap({Name = format("%s-%s-%s",var.project_name, var.env, "vpc")})
+              )
+  
 }
 
 # create internet gateway and attach it to vpc

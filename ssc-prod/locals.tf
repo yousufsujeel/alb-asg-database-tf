@@ -1,7 +1,6 @@
 locals {
-  userdata = <<-USERDATA
-    #!/bin/bash
-    dnf update --releasever=latest -y
-    # Logic of Application Server
-  USERDATA
+common_tags = {
+   CostCenter     = var.CostCenter
+   ApplicationID  = var.ApplicationID
+}
 }
